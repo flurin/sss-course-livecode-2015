@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>HW</title>
+    <style>
+      h1 {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello</h1>
+
+    <% for(var i = 0; i < 10; i++){ %>
+      <% if(i == 0) { %>
+        Dit is de allereerste keer
+      <% } else { %>
+        De <%= (i + 1) %>e keer!
+      <% } %>
+      <br>
+    <% } %>
+
+    <p>students!</p>
+  </body>
+</html>

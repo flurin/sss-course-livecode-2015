@@ -1,20 +1,24 @@
 // app.js
 var express = require('express');
 var app = express();
+var path = require('path');
 
-// Add a reponse
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// Routers
+var carsRouter = require('./routes/cars');
+
+app.use('/autos', carsRouter);
+
 app.get('/hello', function(req, res){
-  var output = '<html><head><title>HW</title></head><body>';
-  output += '<h1>Hello</h1>';
-  output += '<p>students!</p><script>alert("hoi")</script>';
-  output += '</body></html>';
-
-  res.send(output)
-});
+  res.render('hello');
+})
 
 // Start the server
 app.listen(3000, function () {
   console.log('Started!');
 });
 
-// Go to: http://IPADDRESS:3000/hello
+// Go to: http://IPADDRESS:3000/cars
